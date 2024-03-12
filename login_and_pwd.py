@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-from postgresDB_auth import authenticate_user, get_todo
+from postgresDB_auth import CredentialsDB
+
+db = CredentialsDB()
+authenticate_user = db.authenticate_user
+get_todo = db.get_todo
 
 app =  Flask(__name__)
 
@@ -15,6 +19,7 @@ def login():
     password = request.form['password']
 
     result = authenticate_user(username, password)
+    # print("api:",result)
 
     if result:
         #return f"Successful Login. Welcom Mr.{username} "
