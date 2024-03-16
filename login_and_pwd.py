@@ -42,8 +42,8 @@ def fetch_todo():
         return jsonify({'error': 'user not logged in'}), 401
     username = session['username']
     result = get_todo(username)
-
-    return jsonify(result)
+    
+    return render_template('todos.html', todos=result)
 
 @app.route('/logout', methods=['POST'])
 def logout():

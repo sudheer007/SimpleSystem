@@ -4,12 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://c4.wallpaperflare.com/wallpaper/259/235/829/blue-technology-electric-blue-pattern-wallpaper-preview.jpg");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(125, 109, 248, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgb(249, 247, 247);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff
+        }
+        /*
+         .view-todos-btn {
+            padding: 10px 20px;
+            background-color: #28a745; 
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .view-todos-btn:hover {
+            background-color: #218838; 
+        }
+        .logout-form {
+            text-align: center;
+        }
+        .logout-form-button {
+            padding: 10px 20px;
+            background-color: #e792f8;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .logout-form-button:hover {
+            background-color: #0056b3;
+        }
+        */
+        .logout-form {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Your Dashboard, {{ session['username'] }}!</h1>
-    
-    <form action="{{ url_for('logout') }}" method="post">
-        <button type="submit">Logout</button>
-    </form>
+    <div class="container">
+        <h1>Welcome to Your Dashboard, {{ session['username'] }}!</h1>
+        <div style="text-align: center;">
+            <a href="{{ url_for('fetch_todo') }}"><button>View Todos</button></a>
+        </div>
+        <form class="logout-form" action="{{ url_for('logout') }}" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
 </body>
 </html>

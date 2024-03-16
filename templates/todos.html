@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("https://c4.wallpaperflare.com/wallpaper/259/235/829/blue-technology-electric-blue-pattern-wallpaper-preview.jpg");
+            background-size: cover
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .todos {
+            margin-bottom: 20px;
+        }
+        .todos ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .todos ul li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        .todos ul li:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        
+        <div class="todos">
+            <h2>Private Todos</h2>
+            <ul>
+                {% for todo in todos.private_todos %}
+                    <li>{{ todo }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="todos">
+            <h2>Public Todos</h2>
+            <ul>
+                {% for todo in todos.public_todos %}
+                    <li>{{ todo }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
