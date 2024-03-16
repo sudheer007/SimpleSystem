@@ -5,7 +5,7 @@ db = CredentialsDB()
 authenticate_user = db.authenticate_user
 get_todo = db.get_todo
 
-app =  Flask(__name__)
+app =  Flask(__name__, template_folder=r'D:\Sudheer_study_projects\project1\SimpleSystem\web\templates')
 
 app.secret_key = 'secret_key_0177#@!%$&'
 
