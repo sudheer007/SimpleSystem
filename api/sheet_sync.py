@@ -99,9 +99,9 @@ if __name__ == "__main__":
             }
 
     sync_db_sheet = SyncDBSheet(SERVICE_ACCOUNT_FILE, FOLDER_ID, DB_PARAMS)
-    sync_db_sheet.sync_db_to_sheet()
+    # sync_db_sheet.sync_db_to_sheet()
     # sync_db_sheet.sync_sheet_to_db()
-    # sync_db_sheet.run()
+    sync_db_sheet.run()
 
 
 # create_spreadsheet()
